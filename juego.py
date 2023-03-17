@@ -35,8 +35,8 @@ def probar_fin_juego(self):
         if len(Barco.casillas_ocupadas - self.casillas_jugadas) == 0:
             print("Bravo. El juego ha terminado !")
             return True
-
-        return False
+        else:
+            return False
 
 
 def jugar_tirada(self):
