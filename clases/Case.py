@@ -3,6 +3,8 @@ from clases import Barco
 from clases import Conventions
 from itertools import product
 
+from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
+
 
 instances = {}
 jugadas = set()
