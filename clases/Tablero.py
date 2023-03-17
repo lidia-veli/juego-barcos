@@ -7,21 +7,28 @@ from clases import Conventions
 
 
 
-def __init__(self):
-# Creamos las casillas:
-  generar_casillas()
+  
+# performance / legibilidad:
+num_lineas = Conventions.tablero_num_lineas
+num_columnas = Conventions.tablero_num_columnas
+num2l = Conventions.generar_num_linea
+num2c = Conventions.generar_num_columna
 
+
+def __init__(self):
+  # Creamos las casillas:
+  generar_casillas()
   # Creamos los barcos:
   generar_barcos()
   
-  # performance / legibilidad:
-  num_lineas = Conventions.tablero_num_lineas
-  num_columnas = Conventions.tablero_num_columnas
-  num2l = Conventions.generar_num_linea
-  num2c = Conventions.generar_num_columna
-  
   # Creamos la herramienta para poder seguir la situación
   self.casillas_jugadas = set()
+  self.casillas_tocadas = set()
+  self.casillas_hundidas = set()
+  self.casillas_agua = set()
+  self.casillas_ocupadas = set()
+  self.casillas_libres = set()
+  self.casillas_libres.update(Case.instances.values())
   
   # Generamos aquí los etiquetas para facilitar la visualización
   self.etiqueta_lineas = [num2l(x) for x in range(num_lineas)]

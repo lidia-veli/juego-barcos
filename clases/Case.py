@@ -9,6 +9,7 @@ from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
 instances = {}
 jugadas = set()
 
+# ATRIBUTOS CLASE
 def __init__(self, x, y):
   # Adición de las coordenadas
   self.x = x
@@ -25,6 +26,9 @@ def __init__(self, x, y):
   self.jugada = False
   self.barco = None  # No toca a un barco de momento.
 
+
+# MÉTODOS CLASE
+@classmethod
 def _generar_nombre(self):
   """Este método puede ser sobrecargado fácilmente"""
   self.nombre = Conventions.generar_nombre_casilla(self.x, self.y)
@@ -42,7 +46,7 @@ def jugar(self):
   else:
       print("Agua !")
 
-@classmethod
+
 def generar_casillas():
   for x, y in product(range(Conventions.tablero_num_lineas),
                       range(Conventions.tablero_num_columnas)):
