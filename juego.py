@@ -1,21 +1,14 @@
 import sys
 
-from itertools import cycle, chain, product, repeat
-from functools import reduce
-from random import shuffle, choice, random
+from clases import Case
 from clases.Case import *
 from clases.Barco import *
+from clases import Tablero
 from clases.Tablero import *
 from clases.Conventions import *
 
-
-from introducir import (
-    solicitar_introducir_numero_extremo,
-    solicitar_introducir_si_o_no,
-    solicitar_introducir_letra,
-    solicitar_introducir_palabra,
-    solicitar_introducir_casilla,
-)
+from introducir.buleano import (solicitar_introducir_si_o_no)
+from introducir.cadena import (solicitar_introducir_casilla)
 
 
 LONGITUDES_BARCOS = [2, 3, 3, 4, 4, 5]
@@ -39,7 +32,7 @@ def probar_fin_juego(self):
             return False
 
 
-def jugar_tirada(self):
+def jugar_tirada():
         """Permite gestionar el dato introducido de una tirada"""
         while True:
             nombre_casilla = solicitar_introducir_casilla(
@@ -57,8 +50,7 @@ def jugar_tirada(self):
 def jugar_una_partida():
     """Algoritmo de una partida"""
     # Creamos un tablero de juego vacío
-
-    tablero = Tablero()
+    tablero = [['[]' for j in range(num_columnas)] for i in range(num_lineas)]
 
     while True:
         tablero.ver()
@@ -72,8 +64,7 @@ def jugar_una_partida():
 
 
 def elegir_jugarOtra():
-    return solicitar_introducir_si_o_no(
-        "¿Desea volver a jugar? ? [s/n]")
+    return solicitar_introducir_si_o_no("¿Desea volver a jugar? ? [s/n]")
 
 
 def jugar():

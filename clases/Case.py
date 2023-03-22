@@ -38,7 +38,7 @@ def _generar_nombre(self):
   self.nombre = generar_nombre_casilla(self.x, self.y)
 
 
-def jugar(self):
+def jugar_casilla(self):
   """Describe qué pasa cuando jugamos una casilla"""
   self.jugada = True
   self.jugadas.add(self)
