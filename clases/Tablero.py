@@ -14,9 +14,9 @@ num2c = generar_num_columna
 
 def __init__(self):
   # Creamos las casillas:
-  generar_casillas()
+  generar_casillas() # viene de Case
   # Creamos los barcos:
-  generar_barcos(self)
+  generar_barcos(self) # viene de Barco
   
   # Creamos la herramienta para poder seguir la situación
   self.casillas_jugadas = set()
@@ -45,7 +45,7 @@ def ver(self):
   
       # Trazo horizontal para cada nueva línea
       if y == 0:
-          print(self.trazo_horizontal)
+          print(trazo_horizontal)
           print(" {}".format(next(iter_etiqueta_lineas)), end="")
   
       casilla = Case.instances[x, y]

@@ -2,18 +2,14 @@ from itertools import product
 # from clases import Tablero
 # from clases import Barco
 from clases.Conventions import *
-from clases import Barco
 from clases.Barco import *
-
-
 from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
 
+# ATRIBUTOS CLASE
 
 instances = {}
 jugadas = set()
 
-
-# ATRIBUTOS CLASE
 def __init__(self, x, y): 
   # Adición de las coordenadas
   self.x = x
@@ -22,7 +18,7 @@ def __init__(self, x, y):
   instances[x, y] = self
   
   # Generación del nombre de la casilla
-  self._generar_nombre() # la hemos declarado antes de definirla
+  self._generar_nombre()
   # Queremos poder acceder a una casilla a partir de su nombre
   instances[self.nombre] = self
   
@@ -52,9 +48,10 @@ def jugar_casilla(self):
       print("Agua !")
 
 @classmethod
-def generar_casillas():
+def generar_casillas(self):
   for x, y in product(range(tablero_num_lineas), range(tablero_num_columnas)):
-    case(x, y) 
+    self.x = x
+    self.y = y
 
 def __str__(self):
   """Sobrecarga del método de transformación en cadena"""
