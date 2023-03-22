@@ -37,7 +37,7 @@ def _generar_nombre(self):
 def jugar_casilla(self):
   """Describe qué pasa cuando jugamos una casilla"""
   self.jugada = True
-  self.jugadas.add(self)
+  self.casillas_jugadas.add(self)
   
   if self.barco is not None:
       if len(self.casillas - self.casillas_jugadas) == 0:
@@ -50,8 +50,10 @@ def jugar_casilla(self):
 @classmethod
 def generar_casillas(self):
   for x, y in product(range(tablero_num_lineas), range(tablero_num_columnas)):
-    self.x = x
-    self.y = y
+    # self.x = x
+    # self.y = y
+    self.instances[x,y] = (x,y)
+    
 
 def __str__(self):
   """Sobrecarga del método de transformación en cadena"""

@@ -35,16 +35,14 @@ def probar_fin_juego(self):
 def jugar_tirada():
         """Permite gestionar el dato introducido de una tirada"""
         while True:
-            nombre_casilla = solicitar_introducir_casilla(
-                "Seleccionar una casilla (letra + cifra)")
+            nombre_casilla = solicitar_introducir_casilla("Seleccionar una casilla (letra + cifra)")
             # Encontrar la casilla a partir de su nombre
             casilla = Case.instances[nombre_casilla]
             # Probar si la casilla ya ha sido jugada
             if casilla.jugada:
-                print("Esta casilla ya ha sido jugada, elija otra",
-                    file=sys.stderr)
+                print("Esta casilla ya ha sido jugada, elija otra", file=sys.stderr)
             else:
-                casilla.jugar()
+                casilla.jugar_casilla()
                 break
 
 def jugar_una_partida():
