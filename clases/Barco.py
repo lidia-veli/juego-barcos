@@ -31,6 +31,7 @@ def orientar(self):
         # Crear el barco
         self.casillas = {Case.instances[l + c]
                             for l, c in product(letras, repeat(cifra, longitud))}
+    return self.casillas
 
 def instanciar(self):
     for existente in self.instances:
@@ -56,6 +57,7 @@ def __init__(self, longitud):
 
 
 @classmethod
-def generar_barcos(self, cls):
-        for long in Conventions.barcos_longitud:
-            self.longitud = long
+def generar_barcos(self):
+    for long in Conventions.barcos_longitud:
+        self.longitud = long
+        

@@ -54,7 +54,7 @@ def jugar(self):
 @classmethod
 def generar_casillas():
   for x, y in product(range(tablero_num_lineas), range(tablero_num_columnas)):
-    case(x, y) # la clase del método, Case
+    case(x, y) 
 
 def __str__(self):
   """Sobrecarga del método de transformación en cadena"""
