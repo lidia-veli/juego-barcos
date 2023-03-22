@@ -1,4 +1,3 @@
-
 """Clase que contiene los atributos y los métodos estáticos"""
 
 tablero_num_lineas = 10

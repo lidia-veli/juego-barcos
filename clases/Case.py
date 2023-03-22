@@ -1,7 +1,10 @@
-from clases import Tablero
-from clases import Barco
-from clases import Conventions
 from itertools import product
+# from clases import Tablero
+# from clases import Barco
+from clases.Conventions import *
+from clases import Barco
+from clases.Barco import *
+
 
 from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
 
@@ -9,8 +12,9 @@ from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
 instances = {}
 jugadas = set()
 
+
 # ATRIBUTOS CLASE
-def __init__(self, x, y):
+def __init__(self, x, y): 
   # Adición de las coordenadas
   self.x = x
   self.y = y
@@ -28,10 +32,11 @@ def __init__(self, x, y):
 
 
 # MÉTODOS CLASE
-@classmethod
+
 def _generar_nombre(self):
   """Este método puede ser sobrecargado fácilmente"""
-  self.nombre = Conventions.generar_nombre_casilla(self.x, self.y)
+  self.nombre = generar_nombre_casilla(self.x, self.y)
+
 
 def jugar(self):
   """Describe qué pasa cuando jugamos una casilla"""
@@ -46,11 +51,10 @@ def jugar(self):
   else:
       print("Agua !")
 
-
+@classmethod
 def generar_casillas():
-  for x, y in product(range(Conventions.tablero_num_lineas),
-                      range(Conventions.tablero_num_columnas)):
-      Case(x, y)
+  for x, y in product(range(tablero_num_lineas), range(tablero_num_columnas)):
+    case(x, y) # la clase del método, Case
 
 def __str__(self):
   """Sobrecarga del método de transformación en cadena"""
